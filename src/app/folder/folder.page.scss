@@ -1,0 +1,46 @@
+ion-menu-button {
+  color: #ffffff;
+}
+
+ion-toolbar {
+  --background: #5223ad;
+}
+
+ion-img {
+  width: 35%;
+  margin-left: 6rem;
+}
+
+ion-card{
+  background: #f7f4ffd8;
+  margin-top: 6%;
+}
+
+ion-card-header {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+
+
+  h1{
+    color: #5223ad;
+    font-weight: bold;
+  }
+
+  h4{
+    color: #5223ad;
+  }
+
+  h3{
+    color: #5223ad;
+  }
+
+  h6{
+    color: #5223ad;
+  }
+}

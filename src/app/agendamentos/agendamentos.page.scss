@@ -1,0 +1,65 @@
+ion-menu-button {
+  color: #ffffff;
+}
+
+ion-toolbar {
+  --background: #5223ad;
+}
+
+ion-img {
+  width: 35%;
+  margin-left: 6rem;
+}
+
+// ion-item {
+//   --background: none;
+//   opacity: 1;
+// }
+
+ion-item.calendario-largura {
+  --padding-start: 0px;
+  --inner-padding-end: 0px;
+}
+
+ion-datetime {
+  max-width: 100%;
+  background: #f7f4ffd8;
+}
+
+ion-card {
+  background: #f7f4ffd8;
+}
+
+ion-card-header {
+  display: flex;
+  align-items: baseline;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 4%;
+  padding-top: 0%;
+  padding-bottom: 0%;
+
+
+  h1 {
+    color: #5223ad;
+    font-weight: bold;
+  }
+
+  h4 {
+    color: #5223ad;
+  }
+
+  h3 {
+    color: #5223ad;
+  }
+
+  h6 {
+    color: #5223ad;
+  }
+
+}
+
+ion-content {
+  --ion-background-color: #f7f4ffd8;
+}
