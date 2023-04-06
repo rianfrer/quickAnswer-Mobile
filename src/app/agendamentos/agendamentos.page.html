@@ -17,24 +17,32 @@
     </ion-item>
   </ion-list>
 
-  <ion-card>
-    <ion-card-header>
-      <h1>João José</h1>
-      <h4>17h 30min</h4>
-    </ion-card-header>
-    <ion-card-header>
-      <h3>CABELO</h3>
-      <h6>01/04/2023</h6>
-    </ion-card-header>
-  </ion-card>
-  <ion-card>
-    <ion-card-header>
-      <h1>Pedro Davi</h1>
-      <h4>18h 30min</h4>
-    </ion-card-header>
-    <ion-card-header>
-      <h3>BARBA</h3>
-      <h6>01/04/2023</h6>
-    </ion-card-header>
-  </ion-card>
+  <ion-list>
+    <ion-card>
+      <ion-item-sliding>
+        <ion-item>
+          <ion-grid [fixed]="true">
+            <ion-row>
+              <span class="center-titulo">CORTE</span>
+            </ion-row>
+            <ion-row class="distancia-titulo">
+              <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
+              <ion-col class="icon-hora"><ion-icon name="time"></ion-icon></ion-col>
+              <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
+            </ion-row>
+            <ion-row class="distancia-icons">
+              <ion-col class="cliente">João José</ion-col>
+              <ion-col class="hora">15h 30min</ion-col>
+              <ion-col class="dia">12/12/12</ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+
+        <ion-item-options>
+          <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
+          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
+        </ion-item-options>
+      </ion-item-sliding>
+    </ion-card>
+  </ion-list>
 </ion-content>

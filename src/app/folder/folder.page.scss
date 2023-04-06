@@ -11,36 +11,61 @@ ion-img {
   margin-left: 6rem;
 }
 
-ion-card{
-  background: #f7f4ffd8;
-  margin-top: 6%;
+span.center-titulo {
+  font-size: 25px;
+  font-weight: bold;
+  margin-left: 38%;
+  font-family: 'Times New Roman', Times, serif;
 }
 
-ion-card-header {
-  display: flex;
-  align-items: baseline;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 4%;
-  padding-top: 0%;
-  padding-bottom: 0%;
+ion-row.distancia-titulo {
+  padding-top: 5%;
 
+  ion-col.icon-cliente {
+    margin-left: 6%;
+    font-size: 18px;
+  }
 
-  h1{
-    color: #5223ad;
+  ion-col.icon-hora {
+    margin-left: 16%;
+    font-size: 18px;
+  }
+
+  ion-col.icon-dia {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 6%;
+    font-size: 18px;
+  }
+}
+
+ion-row.distancia-icons {
+  padding-top: 2%;
+
+  ion-col.cliente {
+    margin-left: -2%;
+    font-size: 18px;
     font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: #929292;
   }
 
-  h4{
-    color: #5223ad;
+  ion-col.hora {
+    margin-left: 9%;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: #929292;
   }
 
-  h3{
-    color: #5223ad;
+  ion-col.dia {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: -1%;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    color: #929292;
   }
 
-  h6{
-    color: #5223ad;
-  }
 }
