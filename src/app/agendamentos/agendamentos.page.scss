@@ -8,7 +8,7 @@ ion-toolbar {
 
 ion-img {
   width: 35%;
-  margin-left: 6rem;
+  margin-left: 5.5rem;
 }
 
 // ion-item {
@@ -29,8 +29,9 @@ ion-datetime {
 span.center-titulo {
   font-size: 25px;
   font-weight: bold;
-  margin-left: 38%;
+  margin-left: 37%;
   font-family: 'Times New Roman', Times, serif;
+  color: #6f6969;
 }
 
 ion-row.distancia-titulo {
@@ -39,11 +40,13 @@ ion-row.distancia-titulo {
   ion-col.icon-cliente {
     margin-left: 6%;
     font-size: 18px;
+    color: #dadada;
   }
 
   ion-col.icon-hora {
     margin-left: 16%;
     font-size: 18px;
+    color: #dadada;
   }
 
   ion-col.icon-dia {
@@ -51,6 +54,7 @@ ion-row.distancia-titulo {
     justify-content: flex-end;
     margin-right: 6%;
     font-size: 18px;
+    color: #dadada;
   }
 }
 
@@ -61,16 +65,16 @@ ion-row.distancia-icons {
     margin-left: -2%;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #929292;
+    font-family: revert;
+    color: #6f6969;
   }
 
   ion-col.hora {
-    margin-left: 9%;
+    margin-left: 6%;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #929292;
+    font-family: revert;
+    color: #6f6969;
   }
 
   ion-col.dia {
@@ -79,8 +83,8 @@ ion-row.distancia-icons {
     margin-right: -1%;
     font-size: 18px;
     font-weight: bold;
-    font-family: 'Times New Roman', Times, serif;
-    color: #929292;
+    font-family: revert;
+    color: #6f6969;
   }
 
 }
