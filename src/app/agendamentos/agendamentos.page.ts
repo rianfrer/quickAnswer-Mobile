@@ -19,7 +19,7 @@ export class AgendamentosPage implements OnInit {
 
   getClientes() {
     this.apiService.getClientes().subscribe((data) => {
-      console.log(data);
+      console.log(Object.values(data));
       this.clientes = data;
     });
   }
