@@ -18,7 +18,7 @@ export class ApiService {
 
   update() {}
 
-  delete(id: number) {
+  delete(id: any) {
     return this.http.delete(`${this.url}_id=${id}_rev`);
   }
 }

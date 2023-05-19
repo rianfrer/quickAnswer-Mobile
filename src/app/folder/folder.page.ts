@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-folder',
@@ -9,7 +10,10 @@ import { ApiService } from '../services/api.service';
 })
 export class FolderPage implements OnInit {
   public clientes: any;
-  constructor(private apiService: ApiService) {
+  constructor(
+    private apiService: ApiService,
+    private alertCtrl: AlertController
+  ) {
     this.getClientes();
     //  this.updateClientes();
     // this.deleteClientes();
@@ -26,13 +30,31 @@ export class FolderPage implements OnInit {
     });
   }
 
-  remover(id: number) {
+  remover(id: any) {
     console.log(id);
-    this.apiService.delete(id).subscribe(() => {
-      // this.clientes = this.clientes.filter((cliente) => cliente.user_id !== id);
-      this.apiService.getAll().subscribe(response => {
-        this.clientes = response;
+    this.alertCtrl
+      .create({
+        header: 'Desmarcar',
+        message: 'Deseja desmarcar este agendamento?',
+        buttons: [
+          {
+            text: 'Sim',
+            handler: () => {
+              this.apiService.delete(id).subscribe(() => {
+                this.clientes = this.clientes.filter(
+                  (cliente) => cliente._id !== id
+                );
+                // this.apiService.getAll().subscribe(response => {
+                //   this.clientes = response;
+                // })
+              });
+            },
+          },
+          {
+            text: 'Não',
+          },
+        ],
       })
-    });
+      .then((alertEL) => alertEL.present());
   }
 }
