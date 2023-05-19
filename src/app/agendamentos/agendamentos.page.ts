@@ -1,4 +1,3 @@
-import { map } from 'rxjs';
 import { ApiService } from '../services/api.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -19,7 +18,7 @@ export class AgendamentosPage implements OnInit {
   }
 
   getClientes() {
-    this.apiService.getClientes().subscribe((data) => {
+    this.apiService.getAll().subscribe((data) => {
       console.log(Object.values((data as any)['all_docs']));
       this.clientes = Object.values((data as any)['all_docs']);
     });

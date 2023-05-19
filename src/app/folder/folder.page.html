@@ -9,15 +9,28 @@
 
 <ion-content>
 
-  <h1>PRÓXIMOS CLIENTES</h1>
+  <h1>Seus próximos clientes</h1>
+
+  <div>
+
+    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-icon name="arrow-down-outline"></ion-icon>
+
+  </div>
 
   <ion-list>
-    <ion-card>
+
+    <ion-card *ngFor="let cliente of clientes">
       <ion-item-sliding>
         <ion-item>
           <ion-grid [fixed]="true">
             <ion-row>
-              <span class="center-titulo">CORTE</span>
+              <span class="center-titulo" [innerText]="cliente.user_selecao_categoria"></span>
             </ion-row>
             <ion-row class="distancia-titulo">
               <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
@@ -25,126 +38,20 @@
               <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
             </ion-row>
             <ion-row class="distancia-icons">
-              <ion-col class="cliente">João José</ion-col>
-              <ion-col class="hora">15h 30min</ion-col>
-              <ion-col class="dia">12/12/12</ion-col>
+              <ion-col class="cliente" [innerText]="cliente.user_name"></ion-col>
+              <ion-col class="hora" [innerText]="cliente.user_time"></ion-col>
+              <ion-col class="dia" [innerText]="cliente.user_date"></ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
 
         <ion-item-options>
           <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
+          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"
+              (click)="remover(cliente._id)"></ion-icon></ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
     </ion-card>
 
-    <ion-card>
-      <ion-item-sliding>
-        <ion-item>
-          <ion-grid [fixed]="true">
-            <ion-row>
-              <span class="center-titulo">CORTE</span>
-            </ion-row>
-            <ion-row class="distancia-titulo">
-              <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
-              <ion-col class="icon-hora"><ion-icon name="time"></ion-icon></ion-col>
-              <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
-            </ion-row>
-            <ion-row class="distancia-icons">
-              <ion-col class="cliente">João José</ion-col>
-              <ion-col class="hora">15h 30min</ion-col>
-              <ion-col class="dia">12/12/12</ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-
-        <ion-item-options>
-          <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-card>
-
-    <ion-card>
-      <ion-item-sliding>
-        <ion-item>
-          <ion-grid [fixed]="true">
-            <ion-row>
-              <span class="center-titulo">CORTE</span>
-            </ion-row>
-            <ion-row class="distancia-titulo">
-              <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
-              <ion-col class="icon-hora"><ion-icon name="time"></ion-icon></ion-col>
-              <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
-            </ion-row>
-            <ion-row class="distancia-icons">
-              <ion-col class="cliente">João José</ion-col>
-              <ion-col class="hora">15h 30min</ion-col>
-              <ion-col class="dia">12/12/12</ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-
-        <ion-item-options>
-          <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-card>
-
-    <ion-card>
-      <ion-item-sliding>
-        <ion-item>
-          <ion-grid [fixed]="true">
-            <ion-row>
-              <span class="center-titulo">CORTE</span>
-            </ion-row>
-            <ion-row class="distancia-titulo">
-              <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
-              <ion-col class="icon-hora"><ion-icon name="time"></ion-icon></ion-col>
-              <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
-            </ion-row>
-            <ion-row class="distancia-icons">
-              <ion-col class="cliente">João José</ion-col>
-              <ion-col class="hora">15h 30min</ion-col>
-              <ion-col class="dia">12/12/12</ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-
-        <ion-item-options>
-          <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-card>
-
-    <ion-card>
-      <ion-item-sliding>
-        <ion-item>
-          <ion-grid [fixed]="true">
-            <ion-row>
-              <span class="center-titulo">CORTE</span>
-            </ion-row>
-            <ion-row class="distancia-titulo">
-              <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
-              <ion-col class="icon-hora"><ion-icon name="time"></ion-icon></ion-col>
-              <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
-            </ion-row>
-            <ion-row class="distancia-icons">
-              <ion-col class="cliente">João José</ion-col>
-              <ion-col class="hora">15h 30min</ion-col>
-              <ion-col class="dia">12/12/12</ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-item>
-
-        <ion-item-options>
-          <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
-        </ion-item-options>
-      </ion-item-sliding>
-    </ion-card>
   </ion-list>
 </ion-content>

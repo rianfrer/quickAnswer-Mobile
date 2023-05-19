@@ -16,11 +16,10 @@ ion-card {
 }
 
 span.center-titulo {
-  font-size: 25px;
-  font-weight: bold;
-  margin-left: 37%;
-  font-family: 'Times New Roman', Times, serif;
-  color: #6f6969;
+  font-size: 27px;
+    margin-left: 25%;
+    font-family: "Times New Roman", Times, serif;
+    color: #000000;
 }
 
 ion-row.distancia-titulo {
@@ -79,10 +78,14 @@ ion-row.distancia-icons {
 }
 
 h1 {
-  margin-left: 11%;
-  padding-top: 6%;
-  font-weight: bold;
-  font-family: auto;
-  font-size: 183%;
-  color: #5223ac;
+  margin-left: 15%;
+  padding-top: 4%;
+  font-family: monospace;
+  font-size: 170%;
+  color: #331b5f;
+}
+
+div {
+  margin-left: 35%;
+  color: #331b5f;
 }
