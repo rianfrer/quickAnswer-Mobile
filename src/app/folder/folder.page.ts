@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../services/api.service';
 import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-folder',
@@ -12,7 +12,8 @@ export class FolderPage implements OnInit {
   public clientes: any;
   constructor(
     private apiService: ApiService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    public route: Router
   ) {
     this.getClientes();
     //  this.updateClientes();
@@ -57,4 +58,5 @@ export class FolderPage implements OnInit {
       })
       .then((alertEL) => alertEL.present());
   }
+
 }

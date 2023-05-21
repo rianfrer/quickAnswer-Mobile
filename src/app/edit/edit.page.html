@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-img src="assets/quickAnswerMenor.png"></ion-img>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list lines="full">
+    <ion-item>
+      <ion-label class="label">Categoria:</ion-label>
+      <ion-input [(ngModel)]="categoria" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Serviço:</ion-label>
+      <ion-input [(ngModel)]="servico" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Nome:</ion-label>
+      <ion-input [(ngModel)]="nome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Data:</ion-label>
+      <ion-input [(ngModel)]="hora" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label class="label">Dia:</ion-label>
+      <ion-input [(ngModel)]="data" type="text"></ion-input>
+    </ion-item>
+    <ion-button class="ion-padding-horizontal" expand="block" shape="round" (click)="updateAgendamento()">
+      Salvar
+    </ion-button>
+  </ion-list>
+</ion-content>

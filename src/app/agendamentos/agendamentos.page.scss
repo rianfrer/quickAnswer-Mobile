@@ -27,68 +27,23 @@ ion-datetime {
 }
 
 span.center-titulo {
-  font-size: 25px;
+  font-size: 16px;
+  margin-left: 5%;
+  color: #8949ff;
+  padding-bottom: 2%;
+  font-family: monospace;
   font-weight: bold;
-  margin-left: 23%;
-  font-family: 'Times New Roman', Times, serif;
-  color: #6f6969;
 }
 
-ion-row.distancia-titulo {
-  padding-top: 5%;
-
-  ion-col.icon-cliente {
-    margin-left: 6%;
-    font-size: 18px;
-    color: #dadada;
+  ion-col.icon {
+    margin-left: 10%;
+    font-size: 16px;
+    color: #8679a0;
   }
 
-  ion-col.icon-hora {
-    margin-left: 16%;
-    font-size: 18px;
-    color: #dadada;
+  ion-col.info {
+    margin-left: -60%;
+    font-size: 16px;
+    color: #331b5f;
+    font-family: monospace;
   }
-
-  ion-col.icon-dia {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 6%;
-    font-size: 18px;
-    color: #dadada;
-  }
-}
-
-ion-row.distancia-icons {
-  padding-top: 2%;
-
-  ion-col.cliente {
-    margin-left: -2%;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: revert;
-    color: #6f6969;
-  }
-
-  ion-col.hora {
-    margin-left: 6%;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: revert;
-    color: #6f6969;
-  }
-
-  ion-col.dia {
-    display: flex;
-    justify-content: flex-end;
-    margin-right: -1%;
-    font-size: 18px;
-    font-weight: bold;
-    font-family: revert;
-    color: #6f6969;
-  }
-
-}
-
-// ion-content {
-//    --ion-background-color: #f7f4ffd8;
-// }

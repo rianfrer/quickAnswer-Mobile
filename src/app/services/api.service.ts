@@ -12,11 +12,17 @@ export class ApiService {
 
   constructor(private http: HttpClient) {}
 
+  getAgend(id: any){
+    return this.http.get(`${this.url}_id=${id}`);
+  }
+
   getAll() {
     return this.http.get(`${this.url}all_docs`);
   }
 
-  update() {}
+  updateAgendamento(id, name, data, hora, categoria, servico) {
+    return this.http.put(`${this.url}update_id=${id}&user_name=${name}&user_date=${data}&user_time=${hora}&user_categoria=${categoria}&user_servico2=${servico}`, {});
+  }
 
   delete(id: any) {
     return this.http.delete(`${this.url}_id=${id}_rev`);

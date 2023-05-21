@@ -25,23 +25,27 @@
           <ion-grid [fixed]="true">
             <ion-row>
               <span class="center-titulo" [innerText]="cliente.user_selecao_categoria"></span>
+              <span class="center-titulo" [innerText]="cliente.user_selecao_servico2"></span>
             </ion-row>
             <ion-row class="distancia-titulo">
-              <ion-col class="icon-cliente"><ion-icon name="person" size=""></ion-icon></ion-col>
-              <ion-col class="icon-hora"><ion-icon name="time"></ion-icon></ion-col>
-              <ion-col class="icon-dia"><ion-icon name="calendar"></ion-icon></ion-col>
+              <ion-col class="icon"><ion-icon name="person" size=""></ion-icon></ion-col>
+              <ion-col class="info" [innerText]="cliente.user_name"></ion-col>
             </ion-row>
-            <ion-row class="distancia-icons">
-              <ion-col class="cliente" [innerText]="cliente.user_name"></ion-col>
-              <ion-col class="hora" [innerText]="cliente.user_time"></ion-col>
-              <ion-col class="dia" [innerText]="cliente.user_date"></ion-col>
+            <ion-row class="distancia-titulo">
+              <ion-col class="icon"><ion-icon name="time"></ion-icon></ion-col>
+              <ion-col class="info" [innerText]="cliente.user_time"></ion-col>
+            </ion-row>
+            <ion-row class="distancia-titulo">
+              <ion-col class="icon"><ion-icon name="calendar"></ion-icon></ion-col>
+              <ion-col class="info" [innerText]="cliente.user_date"></ion-col>
             </ion-row>
           </ion-grid>
         </ion-item>
 
         <ion-item-options>
-          <ion-item-option><ion-icon slot="icon-only" name="checkmark"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"></ion-icon></ion-item-option>
+          <ion-item-option><ion-icon slot="icon-only" name="create-outline"></ion-icon></ion-item-option>
+          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"
+              (click)="remover(cliente._id)"></ion-icon></ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
     </ion-card>

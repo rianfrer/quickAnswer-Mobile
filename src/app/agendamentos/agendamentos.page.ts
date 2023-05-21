@@ -1,5 +1,7 @@
 import { ApiService } from '../services/api.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-agendamentos',
@@ -8,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgendamentosPage implements OnInit {
   public clientes: any;
-
-  constructor(private apiService: ApiService) {
-    // this.getCliente();
+  constructor(
+    private apiService: ApiService,
+    private alertCtrl: AlertController
+  ) {
+    this.getClientes();
+    //  this.updateClientes();
+    // this.deleteClientes();
   }
 
   ngOnInit() {
@@ -22,5 +28,33 @@ export class AgendamentosPage implements OnInit {
       console.log(Object.values((data as any)['all_docs']));
       this.clientes = Object.values((data as any)['all_docs']);
     });
+  }
+
+  remover(id: any) {
+    console.log(id);
+    this.alertCtrl
+      .create({
+        header: 'Desmarcar',
+        message: 'Deseja desmarcar este agendamento?',
+        buttons: [
+          {
+            text: 'Sim',
+            handler: () => {
+              this.apiService.delete(id).subscribe(() => {
+                this.clientes = this.clientes.filter(
+                  (cliente) => cliente._id !== id
+                );
+                // this.apiService.getAll().subscribe(response => {
+                //   this.clientes = response;
+                // })
+              });
+            },
+          },
+          {
+            text: 'Não',
+          },
+        ],
+      })
+      .then((alertEL) => alertEL.present());
   }
 }

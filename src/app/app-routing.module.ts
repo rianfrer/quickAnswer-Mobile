@@ -34,6 +34,10 @@ const routes: Routes = [
         (m) => m.AgendamentosPageModule
       ),
   },
+  {
+    path: 'edit/:id',
+    loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
 ];
 
 @NgModule({
