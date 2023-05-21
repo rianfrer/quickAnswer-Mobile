@@ -25,6 +25,10 @@
 
   <ion-list>
 
+<ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+  <ion-refresher-content></ion-refresher-content>
+</ion-refresher>
+
     <ion-card *ngFor="let cliente of clientes">
       <ion-item-sliding>
         <ion-item>

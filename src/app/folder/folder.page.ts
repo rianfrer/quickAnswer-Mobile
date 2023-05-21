@@ -59,4 +59,10 @@ export class FolderPage implements OnInit {
       .then((alertEL) => alertEL.present());
   }
 
+  refreshPage(e) {
+    this.getClientes();
+    setTimeout(() => {
+      e.target.complete();
+    }, 2000);
+  }
 }

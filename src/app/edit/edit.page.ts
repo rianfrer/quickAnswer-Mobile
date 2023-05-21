@@ -51,7 +51,7 @@ export class EditPage implements OnInit {
   updateAgendamento() {
     this.apiService.updateAgendamento(this.id, this.nome, this.data, this.hora, this.categoria, this.servico).subscribe(
       (res: any) => {
-        console.log(Object.values(res));
+        console.log(res);
         this.router.navigateByUrl('/folder')
       },
       (err: any) => {

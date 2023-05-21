@@ -21,7 +21,7 @@ export class ApiService {
   }
 
   updateAgendamento(id, name, data, hora, categoria, servico) {
-    return this.http.put(`${this.url}update_id=${id}&user_name=${name}&user_date=${data}&user_time=${hora}&user_categoria=${categoria}&user_servico2=${servico}`, {});
+    return this.http.put(`${this.url}update_id=${id}&user_name=${name}&user_date=${data}&user_time=${hora}&user_selecao_categoria=${categoria}&user_selecao_servico2=${servico}`, {});
   }
 
   delete(id: any) {
