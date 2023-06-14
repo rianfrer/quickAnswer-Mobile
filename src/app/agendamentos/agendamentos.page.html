@@ -10,15 +10,14 @@
 <ion-content>
   <ion-list>
     <ion-item lines="none" class="calendario-largura">
-      <ion-datetime presentation="date"></ion-datetime>
+      <ion-datetime [(ngModel)]="selectedDate" (ionChange)="onDateChange($event)" presentation="date"></ion-datetime>
     </ion-item>
     <ion-item lines="none">
       <ion-searchbar placeholder="Buscar"></ion-searchbar>
     </ion-item>
   </ion-list>
 
-  <ion-list>
-
+  <ion-list *ngIf="clientes.length > 0; else naoAgendamentos">
     <ion-card *ngFor="let cliente of clientes">
       <ion-item-sliding>
         <ion-item>
@@ -43,11 +42,19 @@
         </ion-item>
 
         <ion-item-options>
-          <ion-item-option><ion-icon slot="icon-only" name="create-outline"></ion-icon></ion-item-option>
-          <ion-item-option color="danger"><ion-icon slot="icon-only" name="trash"
-              (click)="remover(cliente._id)"></ion-icon></ion-item-option>
+          <ion-item-option [routerLink]="['/edit/', cliente._id]"><ion-icon slot="icon-only"
+              name="create-outline"></ion-icon></ion-item-option>
+          <ion-item-option color="danger" (click)="remover(cliente._id)"><ion-icon slot="icon-only"
+              name="trash"></ion-icon></ion-item-option>
         </ion-item-options>
       </ion-item-sliding>
     </ion-card>
   </ion-list>
+  <ng-template #naoAgendamentos>
+    <ion-item class="ion-text-center">
+      <ion-label class="nao-agendamentos">
+        Não há agendamentos para esta data
+      </ion-label>
+    </ion-item>
+  </ng-template>
 </ion-content>

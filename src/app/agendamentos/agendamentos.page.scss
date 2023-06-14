@@ -11,11 +11,6 @@ ion-img {
   margin-left: 5.5rem;
 }
 
-// ion-item {
-//   --background: none;
-//   opacity: 1;
-// }
-
 ion-item.calendario-largura {
   --padding-start: 0px;
   --inner-padding-end: 0px;
@@ -35,15 +30,22 @@ span.center-titulo {
   font-weight: bold;
 }
 
-  ion-col.icon {
-    margin-left: 10%;
-    font-size: 16px;
-    color: #8679a0;
-  }
+ion-col.icon {
+  margin-left: 10%;
+  font-size: 16px;
+  color: #8679a0;
+}
 
-  ion-col.info {
-    margin-left: -60%;
-    font-size: 16px;
-    color: #331b5f;
-    font-family: monospace;
-  }
+ion-col.info {
+  margin-left: -60%;
+  font-size: 16px;
+  color: #331b5f;
+  font-family: monospace;
+}
+
+.nao-agendamentos{
+  padding-top: 5%;
+  color: #331b5f;
+  font-weight: bold;
+  font-size: 18px;
+}

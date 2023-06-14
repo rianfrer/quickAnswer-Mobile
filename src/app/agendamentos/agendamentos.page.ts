@@ -1,26 +1,41 @@
-import { ApiService } from '../services/api.service';
+import { ApiService } from './../services/api.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { AlertController } from '@ionic/angular';
-
+import moment from 'moment';
 @Component({
   selector: 'app-agendamentos',
   templateUrl: './agendamentos.page.html',
   styleUrls: ['./agendamentos.page.scss'],
 })
 export class AgendamentosPage implements OnInit {
-  public clientes: any;
+  public diasComAgendamentos: string[] = [];
+  public clientes: any[];
+  public selectedDate: string;
+
   constructor(
     private apiService: ApiService,
     private alertCtrl: AlertController
-  ) {
-    this.getClientes();
-    //  this.updateClientes();
-    // this.deleteClientes();
-  }
+  ) {}
 
   ngOnInit() {
-    this.getClientes();
+    this.filterAgendamentos();
+  }
+
+  onDateChange(event: any) {
+    this.selectedDate = moment(event.target.value).format('YYYY-MM-DD');
+    console.log(this.selectedDate);
+    this.filterAgendamentos();
+  }
+
+  filterAgendamentos() {
+    this.apiService
+      .buscarAgendamentosPorData(this.selectedDate)
+      .subscribe((apiResponse: any) => {
+        console.log(Object.values(apiResponse['filtro_data']));
+        this.clientes = Object.values(apiResponse['filtro_data']).filter(
+          (value) => typeof value === 'object'
+        );
+      });
   }
 
   getClientes() {

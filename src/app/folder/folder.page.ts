@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../services/api.service';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-folder',
@@ -9,25 +10,26 @@ import { Router } from '@angular/router';
   styleUrls: ['./folder.page.scss'],
 })
 export class FolderPage implements OnInit {
-  public clientes: any;
+  public clientes: any[];
+  public totalClientes: number = 0;
+  public clientesCabelo: number = 0;
+  public clientesBarba: number = 0;
+
   constructor(
     private apiService: ApiService,
     private alertCtrl: AlertController,
     public route: Router
-  ) {
-    this.getClientes();
-    //  this.updateClientes();
-    // this.deleteClientes();
-  }
+  ) {}
 
   ngOnInit() {
-    this.getClientes();
+    this.getClientesProximos();
   }
 
-  getClientes() {
-    this.apiService.getAll().subscribe((data) => {
-      console.log(Object.values((data as any)['all_docs']));
-      this.clientes = Object.values((data as any)['all_docs']);
+  getClientesProximos() {
+    const dataAtual = moment().format('YYYY-MM-DD');
+    this.apiService.buscarAgendamentosPorData(dataAtual).subscribe((data) => {
+      console.log(Object.values((data as any)['filtro_data']));
+      this.clientes = Object.values((data as any)['filtro_data']).slice(0, 5);
     });
   }
 
@@ -45,9 +47,6 @@ export class FolderPage implements OnInit {
                 this.clientes = this.clientes.filter(
                   (cliente) => cliente._id !== id
                 );
-                // this.apiService.getAll().subscribe(response => {
-                //   this.clientes = response;
-                // })
               });
             },
           },
@@ -60,7 +59,7 @@ export class FolderPage implements OnInit {
   }
 
   refreshPage(e) {
-    this.getClientes();
+    this.getClientesProximos();
     setTimeout(() => {
       e.target.complete();
     }, 2000);

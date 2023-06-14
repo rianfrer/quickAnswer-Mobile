@@ -9,26 +9,36 @@
 
 <ion-content>
 
-  <h1>Seus próximos clientes</h1>
+  <ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-  <div>
+  <ion-card class="dashboard">
 
-    <ion-icon name="arrow-down-outline"></ion-icon>
-    <ion-icon name="arrow-down-outline"></ion-icon>
-    <ion-icon name="arrow-down-outline"></ion-icon>
-    <ion-icon name="arrow-down-outline"></ion-icon>
-    <ion-icon name="arrow-down-outline"></ion-icon>
-    <ion-icon name="arrow-down-outline"></ion-icon>
-    <ion-icon name="arrow-down-outline"></ion-icon>
+    <ion-item>
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <span class="center-titulo-dashboard">Informações do mês</span>
+        </ion-row>
+        <ion-row>
+          <span class="info-dashboard">Clientes este mês:</span>
+          <span class="info-dashboard">{{ totalClientes }}</span>
+        </ion-row>
+        <ion-row class="distancia-titulo">
+          <span class="info-dashboard">Clientes para cabelo:</span>
+          <span class="info-dashboard">{{ clientesCabelo }}</span>
+        </ion-row>
+        <ion-row class="distancia-titulo">
+          <span class="info-dashboard">Clientes para barba:</span>
+          <span class="info-dashboard">{{ clientesBarba }}</span>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
 
-  </div>
+  <h1><ion-icon name="cut-outline"></ion-icon>Seus atendimentos hoje<ion-icon name="cut-outline"></ion-icon></h1>
 
   <ion-list>
-
-<ion-refresher slot="fixed" (ionRefresh)="refreshPage($event)">
-  <ion-refresher-content></ion-refresher-content>
-</ion-refresher>
-
     <ion-card *ngFor="let cliente of clientes">
       <ion-item-sliding>
         <ion-item>

@@ -30,13 +30,15 @@ const routes: Routes = [
   {
     path: 'agendamentos',
     loadChildren: () =>
-      import('./agendamentos/agendamentos.module').then(
-        (m) => m.AgendamentosPageModule
-      ),
+      import('./agendamentos/agendamentos.module').then((m) => m.AgendamentosPageModule),
   },
   {
     path: 'edit/:id',
     loadChildren: () => import('./edit/edit.module').then( m => m.EditPageModule)
+  },
+  {
+    path: 'configuracoes',
+    loadChildren: () => import('./configuracoes/configuracoes.module').then( m => m.ConfiguracoesPageModule)
   },
 ];
 

@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ToastController } from '@ionic/angular';
+import { ToastController, MenuController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,11 @@ export class LoginPage implements OnInit {
   email: string;
   senha: string;
 
-  constructor(public toastController: ToastController, private route: Router) {}
+  constructor(
+    public toastController: ToastController,
+    private route: Router,
+    private menuController: MenuController
+  ) {}
 
   ngOnInit() {}
 
@@ -31,5 +35,13 @@ export class LoginPage implements OnInit {
       duration: 2000,
     });
     toast.present();
+  }
+
+  ionViewDidEnter() {
+    this.menuController.swipeGesture(false);
+  }
+
+  ionViewDidLeave() {
+    this.menuController.swipeGesture(true);
   }
 }

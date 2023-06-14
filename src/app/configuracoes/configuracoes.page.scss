@@ -1,0 +1,45 @@
+ion-menu-button {
+  color: #ffffff;
+}
+
+ion-toolbar {
+  --background: #5223ad;
+}
+
+ion-img {
+  width: 35%;
+  margin-left: 5.5rem;
+}
+
+ion-item.test {
+  padding-top: 10%;
+  margin-left: 25%;
+
+  h1 {
+    font-weight: bolder;
+  }
+}
+
+.buscar {
+  padding-top: 10%;
+  padding-bottom: 8%;
+}
+
+.itens{
+  padding-bottom: 5%;
+  margin-left: 3%;
+  margin-right: 3%;
+}
+
+.nomes{
+  margin-left: 5%;
+}
+
+.icons{
+  margin-left: 6%;
+  color: black;
+}
+
+.setas{
+  color: black;
+}
